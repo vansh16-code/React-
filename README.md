@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# 🛒 Grocery List App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple and interactive Grocery List application built with React and JSON Server to simulate a RESTful backend.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- Add new grocery items
+- Mark items as purchased (check/uncheck)
+- Delete items
+- Search/filter items in real-time
+- JSON Server used for API simulation
+- Loading indicators and error handling
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React (with Hooks)
+- JSON Server (for fake API)
+- CSS (basic styling)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 Project Structure
 
-### `npm test`
+src/
+├── App.js
+├── apiRequest.js
+├── Header.js
+├── SearchItem.js
+├── AddItem.js
+├── Content.js
+├── Footer.js
+├── index.js
+├── index.css
+data/
+└── db.json
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+bash
+Copy
+Edit
 
-### `npm run build`
+## ⚙️ Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone the repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/your-username/grocery-list-app.git
+cd grocery-list-app
+2. Install dependencies
+bash
+Copy
+Edit
+npm install
+3. Start JSON Server
+Install JSON Server globally if not already installed:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+bash
+Copy
+Edit
+npm install -g json-server
+Run the server:
 
-### `npm run eject`
+bash
+Copy
+Edit
+json-server --watch data/db.json --port 3500
+API will be available at: http://localhost:3500/items
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Start the React App
+Open a second terminal and run:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+bash
+Copy
+Edit
+npm start
+Visit: http://localhost:3000
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+🧪 API Endpoints
+GET /items – Retrieve all items
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+POST /items – Add a new item
 
-## Learn More
+PATCH /items/:id – Update item (check/uncheck)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+DELETE /items/:id – Delete item
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📝 Notes
+IDs are generated manually using the highest existing ID + 1.
 
-### Code Splitting
+You can use a .gitkeep file inside the data/ folder to ensure Git tracks it even if it's empty.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Make sure db.json exists in the data/ directory with some initial structure like:
 
-### Analyzing the Bundle Size
+json
+Copy
+Edit
+{
+  "items": []
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Made with ❤️ using React
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
